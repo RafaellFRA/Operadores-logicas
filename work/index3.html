@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Alistamento Militar</title>
+  </head>
+  <body>
+    <h1>Alistamento Militar</h1>
+    <p>Qual é o seu ano de nascimento?</p>
+    <input type="number" id="ano-nascimento" />
+    <button onclick="calcularTempoAlistamento()">Calcular</button>
+    <p id="tempo-alistamento"></p>
+    <script>
+      function calcularTempoAlistamento() {
+        var anoNascimento = document.getElementById("ano-nascimento").value;
+        var anoAtual = new Date().getFullYear();
+        var idade = anoAtual - anoNascimento;
+        var tempoRestante = 18 - idade;
+        var tempoPassado = idade - 18;
+        if (idade < 18) {
+          document.getElementById("tempo-alistamento").innerHTML =
+            "Faltam " + tempoRestante + " anos para o seu alistamento.";
+        } else {
+          document.getElementById("tempo-alistamento").innerHTML =
+            "Já se passaram " + tempoPassado + " anos desde o seu alistamento.";
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Multa por excesso de velocidade</title>
+  </head>
+  <body>
+    <h1>Velocidade do veículo</h1>
+    <form>
+      <label for="velocidade">Qual a velocidade do veiculo?</label>
+      <input type="number" id="velocidade" name="velocidade">
+      <button type="submit">Enviar</button>
+    </form>
+    <p id="multa"></p>
+    <script>
+      const multa = document.querySelector('#multa');
+    
+      const form = document.querySelector('form');
+form.addEventListener('submit', (event) => {
+  event.preventDefault();
+  const velocidade = form.elements.velocidade.value;
+  if (velocidade <= 80) 
+    alert('Parabens, voce esta no limite de velocidade!');
+  else if (velocidade <=90) 
+    alert('voce foi multado em R$5');
+  else  {
+    alert('Voce foi multado em R$10.'); 
+  }
+});
+    </script>
+  </body>
+</html>

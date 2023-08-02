@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculadora de Passagem</title>
+</head>
+<body>
+    <h1>Calculadora de Passagem</h1>
+    <label for="distancia">Digite a distância em km:</label>
+    <input type="number" id="distancia">
+    <button onclick="calcularPrecoPassagem()">Calcular</button>
+    <p id="resultado"></p>
+
+    <script>
+        function calcularPrecoPassagem() {
+            var distancia = parseFloat(document.getElementById('distancia').value);
+            var taxa_curta = 0.50;
+            var taxa_longa = 0.45;
+            var preco_passagem;
+
+            if (distancia <= 200) {
+                preco_passagem = distancia * taxa_curta;
+            } else {
+                preco_passagem = distancia * taxa_longa;
+            }
+
+            document.getElementById('resultado').innerText = "O preço da passagem é: R$" + preco_passagem.toFixed(2);
+        }
+    </script>
+</body>
+</html>
+</body>
+</html>

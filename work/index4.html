@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculadora de Desconto</title>
+</head>
+<body>
+    <h1>Calculadora de Desconto</h1>
+    <label for="nome">Nome:</label>
+    <input type="text" id="nome">
+
+    <label for="sexo">Sexo:</label>
+    <select id="sexo">
+        <option value="homem">Homem</option>
+        <option value="mulher">Mulher</option>
+    </select>
+
+    <label for="compras">Valor das Compras (R$):</label>
+    <input type="number" id="compras">
+
+    <button onclick="calcularDesconto()">Calcular Desconto</button>
+    <p id="resultado"></p>
+
+    <script>
+        function calcularDesconto() {
+            var nome = document.getElementById('nome').value;
+            var sexo = document.getElementById('sexo').value;
+            var valorCompras = parseFloat(document.getElementById('compras').value);
+            var desconto;
+
+            if (sexo === 'homem') {
+                desconto = 0.05; // 5% de desconto para homens
+            } else if (sexo === 'mulher') {
+                desconto = 0.13; // 13% de desconto para mulheres
+            } else {
+                desconto = 0; // Sem desconto para opções inválidas de sexo
+            }
+
+            var precoComDesconto = valorCompras - (valorCompras * desconto);
+
+            document.getElementById('resultado').innerText = nome + ", o preço com desconto é: R$" + precoComDesconto.toFixed(2);
+        }
+    </script>
+</body>
+</html>
